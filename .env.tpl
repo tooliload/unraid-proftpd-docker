@@ -6,6 +6,7 @@ FTP_DB_ADMIN=         # db user, required
 FTP_DB_ADMIN_PASS=    # db password, required
 FTP_PG_MIGRATE=       # ON/OFF, activate/deactivate creation of required pg tables
 FTP_VERBOSE=          # ON/UNDEF, activate/deactivate logging to files
+SQL_BACKEND=    # postgres or mysql
 
 FTP_ROOT=       # /path/to/ftp/root, optional, defaults to /data/ftp_root
 LOGS=           # /path/to/log/dir, optional, defaults to /var/log/proftpd
