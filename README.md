@@ -4,8 +4,8 @@
 
 - docker
 - (docker-compose)
-- PostgreSQL instance
-- Creating the necessary tables on the PostgreSQL instance using the included migration: `sql/proftp_tables.sql`.
+- PostgreSQL or MySQL instance
+- Creating the necessary tables on the Database instance using the included migration: `sql/proftp_tables.sql`.
 - openssl (for creating passwords)
 
 ## Running with docker-compose, building image
