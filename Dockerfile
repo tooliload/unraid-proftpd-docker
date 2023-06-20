@@ -1,8 +1,8 @@
 FROM ubuntu:16.04
-MAINTAINER "@ebarault"
+MAINTAINER "@tooliload"
 
 RUN apt-get -y update && \
-  apt-get -y install git curl postgresql-client build-essential libssl-dev libpq-dev openssl
+  apt-get -y install git curl postgresql-client build-essential libssl-dev libpq-dev openssl libmysqlclient-dev mysql-client
 
 # RUN curl -o proftpd.tar.gz ftp://ftp.proftpd.org/distrib/source/proftpd-1.3.6rc4.tar.gz && \
 #   tar zxvf proftpd.tar.gz
@@ -19,7 +19,7 @@ RUN cd proftpd-mod_vroot && \
 RUN mv proftpd-mod_vroot proftpd/contrib/mod_vroot
 
 RUN cd proftpd && \
-  ./configure --sysconfdir=/etc/proftpd --localstatedir=/var/proftpd --with-modules=mod_sql:mod_sql_postgres:mod_sql_passwd:mod_tls:mod_exec:mod_vroot --enable-openssl --disable-ident && \
+  ./configure --sysconfdir=/etc/proftpd --localstatedir=/var/proftpd --with-modules=mod_sql:mod_sql_postgres:mod_sql_mysql:mod_sql_passwd:mod_tls:mod_exec:mod_vroot --enable-openssl --disable-ident --with-includes=/usr/include/mysql --with-libraries=/usr/lib/mysql && \
   make && \
   make install
 
