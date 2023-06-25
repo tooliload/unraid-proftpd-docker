@@ -19,7 +19,7 @@ RUN cd proftpd-mod_vroot && \
 RUN mv proftpd-mod_vroot proftpd/contrib/mod_vroot
 
 RUN cd proftpd && \
-  ./configure --sysconfdir=/etc/proftpd --localstatedir=/var/proftpd --with-modules=mod_sql:mod_sql_postgres:mod_sql_mysql:mod_sql_passwd:mod_tls:mod_exec:mod_vroot --enable-openssl --disable-ident --with-includes=/usr/include/mysql --with-libraries=/usr/lib/mysql && \
+  ./configure --sysconfdir=/etc/proftpd --localstatedir=/var/proftpd --with-modules=mod_sql:mod_sql_postgres:mod_sql_mysql:mod_sql_passwd:mod_tls:mod_exec:mod_vroot --enable-openssl --enable-nls --disable-ident --with-includes=/usr/include/mysql --with-libraries=/usr/lib/mysql && \
   make && \
   make install
 
